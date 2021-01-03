@@ -4,8 +4,9 @@ import random
 # it randomly generate the number between one to twenty
 x = random.randint(1, 20)
 
+
 # putting variable value for number of chances
-n = 10
+n = 4
 
 print("\n\nHello! Welcome to GUESS AND WIN game \n")
 
@@ -27,12 +28,12 @@ for y in range(1, n+1):
 
     # this if statement is used to check randomly generated number with user input
     if x != num:
-        if n-y == 1:
-            print("Your guess is wrong! (Last Chance). Try again.")
-        elif n-y == 0:
+        if n-y == 0:
             print("You Loss!!")
+        elif num > x:
+            print("Your Guess is Bigger! (Chance Left", n-y, "). Try again.")
         else:
-            print("Your guess is wrong! (Chance Left ", n-y, "). Try again.")
+            print("Your Guess is Smaller! (Chance Left", n-y, "). Try again. ")
 
     # this else statement will run when user guess correct answer
     else:
